@@ -198,9 +198,3 @@ Missing reference data: users
 ```bash
 npm start
 ```
-
----
-
-# Author
-
-Built for learning & real-world usage 🚀
