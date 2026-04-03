@@ -1,7 +1,7 @@
 {
-  "name": "mongo-seeder",
+  "name": "@mohamedwael/mongo-seeder",
   "version": "1.0.0",
-  "description": "Seed mongodb database with using faker",
+  "description": "Advanced MongoDB seeder CLI with schema and relationships",
   "main": "src/cli.js",
   "type": "module",
   "bin": {
@@ -10,9 +10,14 @@
   "scripts": {
     "start": "node ./src/cli.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "mongodb",
+    "seeder",
+    "faker",
+    "cli"
+  ],
+  "author": "Mohamed Wael",
+  "license": "MIT",
   "dependencies": {
     "@faker-js/faker": "^10.4.0",
     "commander": "^14.0.3",
