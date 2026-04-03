@@ -1,13 +1,13 @@
-# 🚀 Mongo Super Seeder
+# Mongo Seeder
 
 Advanced CLI tool to generate fake data and seed MongoDB with:
 
-- ✅ Custom schemas
-- ✅ Relationships (refs)
-- ✅ Embedded documents
-- ✅ Arrays
-- ✅ Auto dependency resolution
-- ✅ Faker-powered data generation
+- Custom schemas
+- Relationships (refs)
+- Embedded documents
+- Arrays
+- Auto dependency resolution
+- Faker-powered data generation
 
 ---
 
@@ -201,7 +201,7 @@ npm start
 
 ---
 
-# 🚀 Future Improvements
+# Future Improvements
 
 - Faker parameters (min/max)
 - Schema validation (AJV)
