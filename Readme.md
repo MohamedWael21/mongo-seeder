@@ -201,16 +201,6 @@ npm start
 
 ---
 
-# Future Improvements
-
-- Faker parameters (min/max)
-- Schema validation (AJV)
-- Reset database command
-- Export to JSON
-- Plugin system
-
----
-
 # Author
 
 Built for learning & real-world usage 🚀
