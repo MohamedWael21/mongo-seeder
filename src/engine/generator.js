@@ -1,7 +1,12 @@
+import { faker } from "@faker-js/faker";
+import bcrypt from "bcryptjs";
 import fakerMap from "../utils/fakerMap.js";
 
 function resolveField(field, context) {
   if (typeof field === "string") {
+    if (field === "password") {
+      return bcrypt.hashSync("12345", 10);
+    }
     return fakerMap[field]?.() || null;
   }
 
@@ -15,6 +20,24 @@ function resolveField(field, context) {
     const random = refData[Math.floor(Math.random() * refData.length)];
 
     return random._id;
+  }
+
+  if (field?.type === "password") {
+    const raw = field.value || "12345";
+    return bcrypt.hashSync(raw, 10);
+  }
+
+  if (field?.type === "enum") {
+    const values = field.values || [];
+    return values[Math.floor(Math.random() * values.length)] || null;
+  }
+
+  if (field?.type === "number") {
+    return faker.number.int({ min: field.min, max: field.max });
+  }
+
+  if (field?.type === "price") {
+    return parseFloat(faker.commerce.price({ min: field.min, max: field.max }));
   }
 
   if (field?.type === "array") {

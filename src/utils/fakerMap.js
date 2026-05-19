@@ -30,6 +30,7 @@ const fakerMap = {
   phone: () => faker.phone.number(),
   url: () => faker.internet.url(),
   image: () => faker.image.url(),
+  price: () => parseFloat(faker.commerce.price()),
 };
 
 export default fakerMap;

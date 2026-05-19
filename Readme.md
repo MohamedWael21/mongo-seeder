@@ -100,6 +100,65 @@ mongo-seeder seed --config ./config.json --uri mongodb://localhost:27017/testdb
 
 ---
 
+## 5. Password Hashing
+
+Passwords are automatically hashed using `bcryptjs`. By default, the `password` type uses `"12345"`.
+
+```json
+{
+  "password": "password"
+}
+```
+
+You can also provide a static value to be hashed:
+
+```json
+{
+  "password": {
+    "type": "password",
+    "value": "mySecretPassword"
+  }
+}
+```
+
+---
+
+## 6. Configurable Types (Number & Price)
+
+You can restrict the range for `number` and `price` types:
+
+```json
+{
+  "age": {
+    "type": "number",
+    "min": 18,
+    "max": 65
+  },
+  "amount": {
+    "type": "price",
+    "min": 100,
+    "max": 1000
+  }
+}
+```
+
+---
+
+## 7. Enum Values
+
+You can pick a random value from a predefined list:
+
+```json
+{
+  "role": {
+    "type": "enum",
+    "values": ["admin", "user", "editor"]
+  }
+}
+```
+
+---
+
 ## Full Example
 
 ```json
@@ -146,11 +205,11 @@ mongo-seeder seed --config ./config.json --uri mongodb://localhost:27017/testdb
 | lastName  | Last name       |
 | email     | Email           |
 | username  | Username        |
-| password  | Password        |
+| password  | Hashed "12345" (default) |
 | sentence  | Random sentence |
 | paragraph | Paragraph       |
 | word      | Single word     |
-| number    | Integer         |
+| number    | Integer (Configurable) |
 | float     | Float           |
 | boolean   | true/false      |
 | uuid      | UUID            |
@@ -163,6 +222,7 @@ mongo-seeder seed --config ./config.json --uri mongodb://localhost:27017/testdb
 | phone     | Phone number    |
 | url       | URL             |
 | image     | Image URL       |
+| price     | Price (Configurable) |
 
 ---
 
